@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	var swipeCarousel;
 
 	document.addEventListener('scroll', function a() {
-		if (sliderList.getBoundingClientRect().top <= 0) {
+		if (sliderList.getBoundingClientRect().top <= 200) {
 			document.removeEventListener('scroll', a);
 			swipeCarousel = setInterval(() => {
 				if (!document.querySelector('.slideshow-next').classList.contains('disabled')) {
