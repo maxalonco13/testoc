@@ -1,0 +1,153 @@
+.slideshow-main {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: calc(100vw - 17px);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px 400px;
+      grid-template-rows: 100px 400px;
+}
+
+@media screen and (min-width: 992px) {
+  .slideshow-main {
+    -webkit-transform: unset;
+            transform: unset;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    -ms-grid-rows: 100px 400px;
+        grid-template-rows: 100px 400px;
+  }
+}
+
+.slideshow-main h3 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-family: Impact;
+  font-size: 16px;
+  color: #8c8c8c;
+}
+
+@media screen and (min-width: 992px) {
+  .slideshow-main h3 {
+    font-family: Verdana;
+    font-size: 32px;
+    color: #e88100;
+  }
+}
+
+.slideshow-main .slideshow-list {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideshow-main .slideshow-list .slideshow-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.slideshow-main .slideshow-list .slideshow-track .slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  .slideshow-main .slideshow-list .slideshow-track .slide {
+    width: 50%;
+  }
+}
+
+.slideshow-main .slideshow-list .slideshow-track .slide img {
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slideshow-main .slideshow-list .slideshow-track .slide:hover img {
+  opacity: 1;
+}
+
+.slideshow-main .slideshow-list .slideshow-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  pointer-events: none;
+}
+
+.slideshow-main .slideshow-list .slideshow-arrows button {
+  pointer-events: all;
+  width: 27px;
+  height: 27px;
+  display: -ms-grid;
+  display: grid;
+}
+
+.slideshow-main .slideshow-list .slideshow-arrows .slideshow-next,
+.slideshow-main .slideshow-list .slideshow-arrows .slideshow-prev {
+  background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.slideshow-main .slideshow-list .slideshow-arrows .slideshow-next.disabled,
+.slideshow-main .slideshow-list .slideshow-arrows .slideshow-prev.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.slideshow-main .slideshow-list.grab {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.slideshow-main .slideshow-list.grabbing {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
